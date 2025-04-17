@@ -1,0 +1,43 @@
+syntax = "proto3";
+package user;
+
+message RegisterUserRequest{
+    string fullName = 1;
+    string phone = 2;
+    string email = 3;
+    string password = 4;
+    string confirmPassword = 5;
+}
+
+message RegisterUserResponse{
+    bool success = 1;
+    string message = 2;
+}
+
+message LoginUserRequest{
+    string email = 1;
+    string password = 2;
+}
+
+message LoginUserResponse{
+    bool success = 1;
+    string message = 2;
+    string token = 3;
+    string email = 4;
+}
+
+message VerifyTokenRequest {
+    string token = 1;
+}
+
+message VerifyTokenResponse {
+    string userId = 1;
+    string email = 2;
+}
+
+
+service AuthService {
+    rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse){}
+    rpc LoginUser(LoginUserRequest) returns (LoginUserResponse){}
+    rpc VerifyToken(VerifyTokenRequest) returns (VerifyTokenResponse) {}
+}
