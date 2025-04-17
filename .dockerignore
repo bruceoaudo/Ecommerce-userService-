@@ -1,0 +1,27 @@
+# Ignore node_modules – it gets rebuilt inside container
+node_modules
+
+# Ignore logs
+*.log
+logs
+*.out
+
+# Ignore build files or cache
+dist
+build
+.cache
+
+# Ignore environment variables and config secrets (unless you want to copy them in)
+.env
+
+# Ignore Docker-related files themselves
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Misc
+*.swp
+*.tmp
+*.DS_Store
+.vscode
+.idea
