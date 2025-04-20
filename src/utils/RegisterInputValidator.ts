@@ -10,6 +10,21 @@ interface UserInput {
   confirmPassword: string;
 }
 
+/**
+ * Validates and sanitizes user registration input.
+ * @description Checks for required fields, valid email/phone, password strength, and XSS risks.
+ * @param {UserInput} input - The raw user input for registration.
+ * @returns {Promise<SanitizedUserInput>} Sanitized and validated user data.
+ * @throws {BadRequestError} If validation fails (e.g., invalid email, weak password).
+ * @example
+ * const validData = await validateRegisterUserInput({
+ *   fullName: "John Doe",
+ *   phone: "+1234567890",
+ *   email: "john@example.com",
+ *   password: "Pass123!",
+ *   confirmPassword: "Pass123!"
+ * });
+ */
 export const validateRegisterUserInput = async (input: UserInput) => {
   const { fullName, phone, email, password, confirmPassword } = input;
 
