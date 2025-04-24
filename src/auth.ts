@@ -34,7 +34,7 @@ export const RegisterUser = async (
             message: "User registered successfully",
         });
     } catch (error) {
-      console.error("Registration error:", error);
+      
       // Check if it's a BadRequestError
       if (error instanceof BadRequestError) {
         callback({
@@ -183,7 +183,6 @@ export const VerifyToken = (
       email: decoded.email,
     });
   } catch (error) {
-    console.error("Token verification error:", error);
 
     // Proper type checking
     let statusCode = grpc.status.INVALID_ARGUMENT;

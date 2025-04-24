@@ -1,15 +1,15 @@
 version: '3.8'
 
 services:
-  user-service:
-    build: .
-    container_name: user-service
-    ports:
-      - "${PORT}:${PORT}"
-    environment:
-      - MONGO_URI=${MONGO_URI}
-    depends_on:
-      - user-mongo
+  # user-service:  # Comment out or remove this entire block
+  #   build: .
+  #   container_name: user-service
+  #   ports:
+  #     - "${PORT}:${PORT}"
+  #   environment:
+  #     - MONGO_URI=${MONGO_URI}
+  #   depends_on:
+  #     - user-mongo
 
   user-mongo:
     image: mongo:6

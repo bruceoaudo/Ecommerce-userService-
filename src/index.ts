@@ -41,7 +41,7 @@ const start = async () => {
     grpc.ServerCredentials.createInsecure(),
     (err, port) => {
       if (err) throw err;
-      console.log(`userService running on port ${PORT}`);
+      console.log(`userService running on port ${port}`);
     }
   );
 };
